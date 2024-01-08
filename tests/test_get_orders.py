@@ -1,12 +1,13 @@
 import allure
 from clients.api_client import ApiClient
 from base_models import Orders
+from data import EndPointData
 
 
 class TestOrder:
-    path_track = "api/v1/orders/track"
-    path_order = "api/v1/orders"
+    path_order = EndPointData.PATH_ORDER
 
+    @allure.title("При запросе списка заказов в ответ возвращается список заказов в верном формате")
     @allure.description("Тестирование ответа из перечня заказов")
     def test_required_field(self):
         api = ApiClient()

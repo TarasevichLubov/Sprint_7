@@ -1,12 +1,12 @@
 import json
 import requests
-from data import ConstantData
+from data import ConstantData, EndPointData
 
 
 class ApiClient:
 
     def __init__(self):
-        self.base_url = ConstantData.BASE_URL
+        self.base_url = EndPointData.BASE_URL
         self.headers = ConstantData.DEFAULT_HEADERS
 
     def post(self, path, payload):

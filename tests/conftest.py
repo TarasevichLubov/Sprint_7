@@ -1,11 +1,13 @@
 import requests
 import random
 import string
+import pytest
 
 
 # метод регистрации нового курьера возвращает список из логина и пароля
 # если регистрация не удалась, возвращает пустой список
-def register_new_courier_and_return_login_password():
+@pytest.fixture
+def register_new_courier_and_return_login_password(scope='function'):
     # метод генерирует строку, состоящую только из букв нижнего регистра, в качестве параметра передаём длину строки
     def generate_random_string(length):
         letters = string.ascii_lowercase
